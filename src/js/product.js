@@ -5,10 +5,7 @@ const dataSource = new ProductData('tents');
 
 function addProductToCart(product) {
   const cartList = getLocalStorage('so-cart') || [];
-  if (!cartList.find((cartProduct) => product.Id == cartProduct.Id)) {
-    cartList.push(product);
-  }
-
+  cartList.push(product);
   setLocalStorage('so-cart', cartList);
 }
 // add to cart button event handler
