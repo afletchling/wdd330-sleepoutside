@@ -21,3 +21,8 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+// get a specified parameter from the URL search bar
+export function getParam(key) {
+  const params = new URLSearchParams(window.location.search); // query data split after the question mark
+  return params.get(key);
+}
