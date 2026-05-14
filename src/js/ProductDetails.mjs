@@ -21,9 +21,9 @@ export default class ProductDetails {
       const clone = template.content.cloneNode(true);
       const [title, details, img, price, color, description, checkout] = clone.querySelectorAll('h3, h2, img, p, p, p, button');
 
-      title.textContent = this.product.Name.replace(this.product.NameWithoutBrand, '');
+      title.textContent = this.product.Brand.Name;
       details.textContent = this.product.NameWithoutBrand;
-      price.textContent = `$${this.product.ListPrice.toFixed(2)}`;
+      price.textContent = `$${this.product.FinalPrice.toFixed(2)}`;
       color.textContent = this.product.Colors[0].ColorName;
       description.innerHTML = this.product.DescriptionHtmlSimple;
 
