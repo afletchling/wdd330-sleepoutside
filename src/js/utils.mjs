@@ -26,3 +26,12 @@ export function getParam(key) {
   const params = new URLSearchParams(window.location.search); // query data split after the question mark
   return params.get(key);
 }
+// render out a list element with the provided template array
+export function renderListWithTemplate(templateCallback, parentElement, list, position = 'afterbegin', clear = false) {
+  const templates = list.map(product => templateCallback(product));
+  if (clear) {
+    parentElement.innerHTML = '';
+  }
+
+  parentElement.insertAdjacentHTML(position, templates.join(''));
+}
