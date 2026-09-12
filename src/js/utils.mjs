@@ -26,3 +26,18 @@ export function getParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
+// render a list of objects from a template function
+export function renderListWithTemplate(
+  callback,
+  parentElement,
+  list,
+  position = 'afterbegin',
+  clear = false,
+) {
+  if (clear) {
+    parentElement.innerHTML = '';
+  }
+
+  const templateList = list.map(callback);
+  parentElement.insertAdjacentHTML(position, templateList.join(''));
+}
