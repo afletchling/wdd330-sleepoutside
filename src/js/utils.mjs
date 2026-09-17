@@ -41,3 +41,45 @@ export function renderListWithTemplate(
   const templateList = list.map(callback);
   parentElement.insertAdjacentHTML(position, templateList.join(''));
 }
+// render an object from a template function
+export function renderWithTemplate(template, parentElement, data, callback) {
+  parentElement.innerHTML = template;
+  if (callback) {
+    callback(data);
+  }
+}
+// fetch and load template
+export async function loadTemplate(url) {
+  const data = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'text/html',
+    },
+  }).catch((err) => {
+    console.error(err);
+  });
+
+  if (data.ok) {
+    return await data.text();
+  } else {
+    return '';
+  }
+}
+// load header and footer
+export async function loadHeaderFooter() {
+  const headerElement = document.getElementById('header');
+  if (headerElement) {
+    renderWithTemplate(
+      await loadTemplate('../partials/header.html'),
+      headerElement,
+    );
+  }
+
+  const footerElement = document.getElementById('footer');
+  if (footerElement) {
+    renderWithTemplate(
+      await loadTemplate('../partials/footer.html'),
+      footerElement,
+    );
+  }
+}
