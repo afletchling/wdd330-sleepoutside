@@ -241,6 +241,26 @@ button {
   grid-column: 3;
 }
 
+/* Category Formatting */
+.category-list {
+  display: grid;
+  columns: 4;
+  grid-gap: 1cap;
+  grid-auto-flow: column;
+  list-style-type: none;
+  text-align: center;
+}
+
+.category-list img {
+  width: min(64px, 50%);
+  height: auto;
+}
+
+.category-list a {
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

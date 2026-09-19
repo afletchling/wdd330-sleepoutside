@@ -35,7 +35,7 @@ export default class ProductDetails {
       color.textContent = (this.product.Colors[0] || {}).ColorName || '';
       description.innerHTML = this.product.DescriptionHtmlSimple || '';
 
-      image.src = this.product.Image || '';
+      image.src = this.product.Images.PrimaryLarge || '';
       image.alt = this.product.Brand.Name || '';
     }
   }
