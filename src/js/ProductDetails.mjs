@@ -18,7 +18,14 @@ export default class ProductDetails {
   }
   addProductToCart() {
     const cart = getLocalStorage('so-cart') || [];
-    cart.push(this.product);
+    const product = cart.find((obj) => obj.Id === this.product.Id);
+
+    if (product !== undefined) {
+      product.Quantity = (product.Quantity ?? 1) + 1;
+    } else {
+      cart.push(this.product);
+    }
+
     setLocalStorage('so-cart', cart);
   }
   renderProductDetails() {
