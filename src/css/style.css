@@ -99,6 +99,14 @@ p {
   color: var(--tertiary-color);
 }
 
+.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 button {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
@@ -108,6 +116,28 @@ button {
   border: 0;
   font-size: var(--large-font);
   cursor: pointer;
+}
+
+form p {
+  width: 100%;
+  padding: 0.3rem;
+  font-size: larger;
+  justify-content: center;
+  text-align: center;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  gap: 0.5rem;
+}
+
+input {
+  justify-self: right;
+  right: 0;
+  width: auto;
+  padding: 0.2rem;
 }
 
 .divider {
@@ -164,7 +194,6 @@ button {
 }
 
 .product-list a {
-  text-decoration: none;
   color: var(--dark-grey);
 }
 
