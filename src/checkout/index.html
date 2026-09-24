@@ -22,44 +22,59 @@
           <fieldset>
             <legend>Billing Information</legend>
             <label for="first-name">
-            First Name:
-            <input name="first-name" autocomplete="given-name" required>
-          </label>
-          <label for="last-name">
-            Last Name:
-            <input name="last-name" autocomplete="family-name" required>
-          </label>
-          <label for="address">
-            Street Address:
-            <input name="address" autocomplete="street-address" required>
-          </label>
-          <label for="city">
-            City:
-            <input name="city" autocomplete="address-level2" required>
-          </label>
-          <label for="state">
-            State:
-            <input name="state" autocomplete="address-level1" required>
-          </label>
-          <label for="zipcode">
-            Zip Code:
-            <input name="zipcode" id="zipcode" autocomplete="postal-code" required>
-          </label>
+              First Name:
+              <input name="first-name" autocomplete="given-name" required />
+            </label>
+            <label for="last-name">
+              Last Name:
+              <input name="last-name" autocomplete="family-name" required />
+            </label>
+            <label for="address">
+              Street Address:
+              <input name="address" autocomplete="street-address" required />
+            </label>
+            <label for="city">
+              City:
+              <input name="city" autocomplete="address-level2" required />
+            </label>
+            <label for="state">
+              State:
+              <input name="state" autocomplete="address-level1" required />
+            </label>
+            <label for="zipcode">
+              Zip Code:
+              <input
+                name="zipcode"
+                id="zipcode"
+                autocomplete="postal-code"
+                required
+              />
+            </label>
           </fieldset>
           <fieldset>
             <legend>Payment Information</legend>
             <label for="card">
-            Credit Card Number:
-            <input name="card" autocomplete="cc-number" maxlength="16" required>
-          </label>
-          <label for="exp">
-            Expiration Date:
-            <input name="exp" autocomplete="cc-exp" maxlength="5" required>
-          </label>
-          <label for="security-code">
-            Security Code:
-            <input name="security-code" autocomplete="cc-csc" maxlength="4" required>
-          </label>
+              Credit Card Number:
+              <input
+                name="card"
+                autocomplete="cc-number"
+                maxlength="16"
+                required
+              />
+            </label>
+            <label for="exp">
+              Expiration Date:
+              <input name="exp" autocomplete="cc-exp" maxlength="5" required />
+            </label>
+            <label for="security-code">
+              Security Code:
+              <input
+                name="security-code"
+                autocomplete="cc-csc"
+                maxlength="4"
+                required
+              />
+            </label>
           </fieldset>
           <p id="subtotal">Subtotal: $0.00</p>
           <p class="hidden" id="tax">Tax: $0.00</p>

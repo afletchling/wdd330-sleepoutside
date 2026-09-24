@@ -7,17 +7,17 @@ holder.displaySubtotal();
 
 const zipField = document.getElementById('zipcode');
 if (zipField) {
-    zipField.addEventListener('input', () => {
-        holder.calculateTotals();
-    });
+  zipField.addEventListener('input', () => {
+    holder.calculateTotals();
+  });
 }
 
 const form = document.querySelector('form');
 if (form) {
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        holder.checkout(form);
-    })
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    holder.checkout(form);
+  });
 }
 
 loadHeaderFooter();

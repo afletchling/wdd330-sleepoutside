@@ -24,9 +24,9 @@ export default class ExternalServices {
     return await fetch(`${baseURL}checkout`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(order)
+      body: JSON.stringify(order),
     })
       .then(convertToJson)
       .then((data) => data);

@@ -85,11 +85,11 @@ export async function loadHeaderFooter() {
 }
 // display and unhide label
 export function displayLabel(id, text) {
-    const label = document.getElementById(id);
-    if (label) {
-        label.classList.remove('hidden');
-        label.textContent = text;
-    }
+  const label = document.getElementById(id);
+  if (label) {
+    label.classList.remove('hidden');
+    label.textContent = text;
+  }
 }
 // convert form data to JSON
 export function formDataToJSON(form) {
@@ -98,7 +98,7 @@ export function formDataToJSON(form) {
 
   formData.forEach((value, key) => {
     newData[key] = value;
-  })
+  });
 
   return newData;
 }
