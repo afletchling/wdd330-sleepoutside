@@ -83,3 +83,22 @@ export async function loadHeaderFooter() {
     );
   }
 }
+// display and unhide label
+export function displayLabel(id, text) {
+    const label = document.getElementById(id);
+    if (label) {
+        label.classList.remove('hidden');
+        label.textContent = text;
+    }
+}
+// convert form data to JSON
+export function formDataToJSON(form) {
+  const formData = new FormData(form);
+  const newData = {};
+
+  formData.forEach((value, key) => {
+    newData[key] = value;
+  })
+
+  return newData;
+}

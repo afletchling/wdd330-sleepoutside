@@ -1,9 +1,9 @@
-import ProductData from './ProductData.mjs';
+import ExternalServices from './ExternalServices.mjs';
 import ProductList from './ProductList.mjs';
 import { getParam, loadHeaderFooter } from './utils.mjs';
 
 const category = getParam('category') ?? 'tents';
-const data = new ProductData(category);
+const data = new ExternalServices(category);
 const listElement = document.querySelector('.product-list');
 const title = document.querySelector('h2');
 title.textContent = `Top Products: ${category
