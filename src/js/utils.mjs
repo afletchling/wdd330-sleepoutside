@@ -102,3 +102,27 @@ export function formDataToJSON(form) {
 
   return newData;
 }
+// create a simple alert box at the top of the page
+export function alertMessage(message, scroll = true) {
+  const alert = document.createElement('div');
+  alert.classList.add('alert');
+  const text = document.createElement('p');
+  text.textContent = message;
+  const close = document.createElement('a');
+  close.textContent = 'X';
+  text.appendChild(close);
+  alert.appendChild(text);
+
+  const main = document.querySelector('main');
+  if (main) {
+    main.prepend(alert);
+
+    close.addEventListener('click', () => {
+      main.removeChild(alert);
+    });
+  }
+
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
+}
