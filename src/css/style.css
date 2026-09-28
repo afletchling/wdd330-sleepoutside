@@ -154,6 +154,13 @@ input {
   float: right;
 }
 
+.remove-button {
+  background-color: orange;
+  border: 1px solid orangered;
+  padding: 0.5rem;
+  grid-row: 1/4;
+}
+
 #success-message {
   padding: 2rem;
   text-align: center;
