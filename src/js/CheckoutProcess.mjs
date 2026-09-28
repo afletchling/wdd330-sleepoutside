@@ -65,7 +65,11 @@ export default class CheckoutProcess {
       tax: this.tax.toFixed(2),
     };
 
-    const response = await externalServices.checkout(order);
-    console.log(response);
+    try {
+      const response = await externalServices.checkout(order);
+      return true;
+    } catch (err) {
+      return err;
+    }
   }
 }

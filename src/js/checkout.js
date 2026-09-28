@@ -1,5 +1,5 @@
 import CheckoutProcess from './CheckoutProcess.mjs';
-import { loadHeaderFooter } from './utils.mjs';
+import { alertMessage, loadHeaderFooter, setLocalStorage } from './utils.mjs';
 
 const holder = new CheckoutProcess();
 holder.init();
@@ -14,9 +14,17 @@ if (zipField) {
 
 const form = document.querySelector('form');
 if (form) {
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    holder.checkout(form);
+    const response = await holder.checkout(form);
+    if (response === true) {
+      setLocalStorage('so-cart', []);
+      window.location = '/success/index.html';
+    } else {
+      for (const message of Object.values(response.response)) {
+        alertMessage(message);
+      }
+    }
   });
 }
 

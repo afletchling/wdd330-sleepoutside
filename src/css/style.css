@@ -144,6 +144,21 @@ input {
   border-bottom: 2px solid var(--primary-color);
 }
 
+.alert {
+  background-color: orange;
+  border: 1px solid orangered;
+  margin: 0.3rem 0;
+}
+
+.alert a {
+  float: right;
+}
+
+#success-message {
+  padding: 2rem;
+  text-align: center;
+}
+
 /* End utility classes */
 
 /* Cart icon styles */
